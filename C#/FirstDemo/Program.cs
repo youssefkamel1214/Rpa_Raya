@@ -74,6 +74,7 @@
         }
         static void Main(string[] args)
         {
+            
             int countOfEmployees = int.Parse(Console.ReadLine());
 
             var employees = new List<Employee>();
