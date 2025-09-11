@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MQgEJy5xN0OgPUbbiF8JBw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="aa960fb9-f956-4a42-b9c5-cb5d73db9d89" CvElementArea="1141, 460, 250, 43" CvType="InputBox" DesignTimeRectangle="1138, 457, 258, 50" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;uia automationid='InternalExpander' cls='Microsoft.UI.Xaml.Controls.Expander' name='Font' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;uia automationid='FontFamilyComboBox' cls='ComboBox' name='Family' role='combo box' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;" Guid="2c4170bb-4b3c-4ebf-b6c8-fa3edab1887a" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="aa960fb9-f956-4a42-b9c5-cb5d73db9d89" CvTextArea="132, 473, 51, 21" CvTextArgument="Family" CvType="Text" DesignTimeRectangle="134, 470, 989, 24" ElementType="Text" FuzzySelectorArgument="&lt;uia automationid='InternalExpander' cls='Microsoft.UI.Xaml.Controls.Expander' name='Font' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;uia cls='TextBlock' name='Family' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:fulltext='Family' /&gt;" Guid="e730ffa9-352e-4068-bd3c-57aa16058f57" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="60f9b1d9d785d0f700cd4ad5136b173c.png" xmlns="">0VRUWN5TIUk2SpKKrQqcwGQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

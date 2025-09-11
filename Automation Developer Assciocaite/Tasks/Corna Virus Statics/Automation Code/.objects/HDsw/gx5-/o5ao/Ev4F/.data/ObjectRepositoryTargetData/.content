@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MWrNcFtjYE2kwxiCPRxsqQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="d96af29e-c7ba-441e-abeb-08029ca14945" CvTextArea="32, 612, 36, 16" CvTextArgument="Font" CvType="Text" DesignTimeRectangle="33, 608, 163, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia automationid='TextBlock' cls='TextBlock' name='Font' /&gt;" Guid="24d68222-b83e-4822-b0ab-f2fef54edb81" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='PopupHost' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="adafa0e71d164273a3d3cc03aad38855.png" xmlns="">0_wa06p2SnEyZgi3s8PRLRA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

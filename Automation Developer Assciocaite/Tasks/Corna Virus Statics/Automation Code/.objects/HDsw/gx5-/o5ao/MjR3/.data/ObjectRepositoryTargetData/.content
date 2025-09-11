@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="e-b8_lcQ202n9VUkHAnYQQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="0e965d66-a978-4848-80fb-5c08ddaa459a" CvElementArea="65, 12, 303, 41" CvType="Button" DesignTimeRectangle="319, 17, 40, 30" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia automationid='Tabs' cls='Microsoft.UI.Xaml.Controls.TabView' /&gt;&lt;uia automationid='TabListView' cls='ListView' /&gt;&lt;uia automationid='CloseButton' cls='Button' name='Close Tab' /&gt;" Guid="68e6557f-d45c-4377-b0d2-29254b4f3e5c" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="83af08d979fa6182c989770dc74234dc.png" xmlns="">0X9vCnXLtj0eolPBqOA7Qbw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

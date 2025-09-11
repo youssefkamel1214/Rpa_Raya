@@ -1,0 +1,5 @@
+Cases Detected : 516,023        
+
+Cases Recoved : 442,182
+
+Cases Died : 24,613

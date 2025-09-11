@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VqSLj_beSUGBleX1rekwjg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.com/search" CVScreenId="1f96d7c5-a540-429d-a4d9-b0dce8b5eeea" DesignTimeRectangle="266, 411, 485, 39" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" Guid="36b62447-3c60-4ae9-9bbe-f9d318056ad5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='north korea coronavirus worldometer - Google Search' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e65603dd5568c72c34ecb0d5e663b15f.png" xmlns="">05Yg8uhIvS028eB-Gf9_TSQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

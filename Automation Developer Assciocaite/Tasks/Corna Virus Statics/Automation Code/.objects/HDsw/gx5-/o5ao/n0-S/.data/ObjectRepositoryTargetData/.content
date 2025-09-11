@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qB06GIQOA0ayhr6BFc0FJg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="1f6cf949-dc7c-4494-8f7a-04a2270beab9" CvElementArea="19, 13, 27, 25" CvType="Icon" DesignTimeRectangle="14, 12, 38, 30" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia automationid='Button' cls='Button' name='Back' /&gt;" Guid="081d1607-2785-4a1f-9478-4811b61dd698" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAiCAYAAAApkEs2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEySURBVFhH7dXNSgJRGMZxr6SFkRAYKC2MXLWoVWAwoCTYThS8A0kwahEJUUs/8BKqOxDRVYLewOwGFGadK4UnXpfzbuzMM6FwFr/NeeHwZ+acmdjhQRz7IBZc2FU2lM2GstlQNhvKRg1NxI9QLVfUOgMt9OQ4ifFojK+PTzVjoISenWYwm07R7/XVjCV0aDZzDtd10Xp+UTOmUKFXF5dYzBdo1O/VjM04tODk4fs+atWamkXBKPTmOoflzxLDwRDvr29/Iuc5uN82jELlaa5Xa6NQOS7B/bZhFCruiqXNqy/mb9UsCsahwsk5m8v0H+c0VKiQV+l5Hp4eHtWMKXSokAsi31I5g8EZCyVUpJMpTL4n6LY7asZACxXyv282mmqdgRoaJRvKZkPZbCibDWXbm9BfVEUIOv/6l2UAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b8dd36399551d4763c4d123f2c58acc8.png" xmlns="">0U1Q-KazVUkWwDsw94PZiIw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

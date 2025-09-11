@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Font",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Ev4Fk9m3106lTjwIDupOAA",
+  "Reference": "DEqJ4zQNukSW_7_Nzf7LLQ/Ev4Fk9m3106lTjwIDupOAA",
+  "ParentRef": "DEqJ4zQNukSW_7_Nzf7LLQ/o5aoCfRqMkuQMsJwcva4Ig",
+  "Created": "2025-09-09T20:13:03.427805Z",
+  "Updated": "2025-09-09T20:13:03.427805Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.15.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

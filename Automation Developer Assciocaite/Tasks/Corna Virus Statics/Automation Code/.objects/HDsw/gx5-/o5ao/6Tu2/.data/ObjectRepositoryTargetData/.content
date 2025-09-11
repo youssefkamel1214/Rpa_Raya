@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7-DVm3O540K136LflNxFcg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="ebdb0baf-5644-4a9f-ae96-5dae386c07c4" CvElementArea="660, 265, 251, 43" CvType="InputBox" DesignTimeRectangle="660, 265, 251, 43" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="0635d960-1bf9-4c62-a6a8-b0bd5b128bb4" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="0db6708c-cb2f-4b5c-a395-05bd0fb874dd" CvTextArea="132, 280, 51, 21" CvTextArgument="Family" CvType="Text" DesignTimeRectangle="132, 280, 51, 21" ElementType="Text" Guid="b37c9d3f-0e06-452c-98ec-0fc34a5ef3bf" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c05bc94f1b32bf009aa4bc2f9bbfeeab.png" xmlns="">0b5t2YS4ueUiciJ0nColKbw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

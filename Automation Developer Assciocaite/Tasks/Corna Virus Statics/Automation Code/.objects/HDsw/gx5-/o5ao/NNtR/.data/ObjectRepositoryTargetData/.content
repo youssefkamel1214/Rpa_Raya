@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AKNdfRe5jUCQNR5BXcpH7Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="516e7570-4dd5-4c08-aa48-8852f71d64d8" CvTextArea="23, 65, 28, 16" CvTextArgument="File" CvType="Text" DesignTimeRectangle="13, 52, 52, 40" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;uia automationid='MenuBar' role='menu bar' /&gt;&lt;uia automationid='File' cls='Microsoft.UI.Xaml.Controls.MenuBarItem' name='File' /&gt;" Guid="ea643705-900b-4c8f-b1b2-562f7b6dbf87" ScopeSelectorArgument="&lt;wnd app='notepad.exe' appid='Microsoft.WindowsNotepad_8wekyb3d8bbwe!App' title='Untitled - Notepad' /&gt;" SearchSteps="Selector, CV" SelectionStrategy="UIA" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="7b2a4579e1eaad87ae52ce94b12e49d3.png" xmlns="">0U5_AXruT6kekKzGPbHolNQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
