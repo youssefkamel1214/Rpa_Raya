@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Detect_If_AcmeSystem3_loggedin",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "out_bollLoggedIn",
+      "DisplayName": "out_bollLoggedIn",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_intTimeAwait",
+      "DisplayName": "in_intTimeAwait",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

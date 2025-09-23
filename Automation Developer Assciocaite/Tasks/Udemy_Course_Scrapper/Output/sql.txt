@@ -1,0 +1,2 @@
+Index,Url,Name,Descirption,Duration,Price,Ratings,NumberRatings,Author
+3,/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/,The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert,"JUST COMPLETELY REDONE!  Master SQL, Work With Complex Databases, Build Reports, and More!",21h 45m,639.99,4.6,"104,725",Colt Steele

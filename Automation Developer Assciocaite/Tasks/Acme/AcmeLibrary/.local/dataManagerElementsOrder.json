@@ -1,0 +1,76 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem3/LoginAcmeSystem3.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem3/OpenAcmeSystem3.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/OpenAcmeSystem1.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/CloseAcmeSystem1.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/LoginToAcmeSystem1.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/Detect_if _AcmeSystem1_loggedin.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/LogoutAcmeSystem1.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem3/CloseAcmeSystem3.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}

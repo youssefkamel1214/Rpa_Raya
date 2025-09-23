@@ -1,0 +1,605 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtractDataUsingApi" this:ExtractDataUsingApi.in_strPiKey="AIzaSyAwkFCb0DQv60kitGPu6WRJ4IgwjK__b_I" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strPiKey" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="out_liststrDocuments" Type="OutArgument(s:String[])">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_intNumberFiles" Type="InArgument(x:Int32)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_Retries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_DelayTime" Type="InArgument(x:TimeSpan)" />
+  </x:Members>
+  <this:ExtractDataUsingApi.in_Retries>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:ExtractDataUsingApi.in_Retries>
+  <this:ExtractDataUsingApi.in_DelayTime>
+    <InArgument x:TypeArguments="x:TimeSpan" />
+  </this:ExtractDataUsingApi.in_DelayTime>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ExtractDataUsingApi_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+      <x:String>UiPath.Web.Activities.JSON</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Actions : Take cv txt and make Http Requast for Gemni Ai and  send it then get response and extract list of dataDocuments&#xA;Pre Condations :  cv txt File Exists, Number of cv greater than 0&#xA;Post Condations : listDocument data isnt empty and size eqaul to cvs pdf files" DisplayName="ExtractDataUsingApi" sap:VirtualizedContainerService.HintSize="866,480.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strBodyReuqast" />
+      <Variable x:TypeArguments="x:String" Name="strDocumentsText" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="HttpResponse" />
+      <Variable x:TypeArguments="njl:JObject" Name="JsonSerializer" />
+      <Variable x:TypeArguments="x:String" Name="strAiResponse" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Entry Piont" sap:VirtualizedContainerService.HintSize="449.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_19" Message="[&quot;Enter ExtractDataUsingApi&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="518.4,562.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="484.8,502.4" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_Retries]" RetryInterval="[in_DelayTime]">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="483.2,304.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Pre Condations" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="boolFileExists" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Check if there at least one file" sap:VirtualizedContainerService.HintSize="449.6,140" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[in_intNumberFiles&gt;0]" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,108" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Number Cvs" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Begin Build Reuqast&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log BE01" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;BE01 There No Cv To Extract Data From &quot;]" />
+                            <Throw Exception="[new BusinessRuleException(&quot;BE01 There No Cv To Extract Data From &quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <Sequence DisplayName="Check if File Exists" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:FileExistsX DisplayName="File Exists" Exists="[boolFileExists]" sap:VirtualizedContainerService.HintSize="416,166.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="inputs\cv.txt" />
+                      <If Condition="[boolFileExists]" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,108" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log File Created SuccessFully" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;cv File Exists Begin Reading Cvs text&quot;]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,282.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log File Created SuccessFully" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;AE 01 cv File cant be Created &quot;]" />
+                            <Throw DisplayName="Throw AE01" Exception="[new SystemException(&quot;AE 01 cv File cant be Created &quot;)]" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Throw_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Throw>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </Sequence>
+                  <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Send Reqaust" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ReadTextFile FileName="{x:Null}" Content="[strBodyReuqast]" DisplayName="Read Reuqst Body" File="[LocalResource.FromPath(&quot;inputs\\ReqastBody.txt&quot;)]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ReadTextFile>
+                      <ui:ReadTextFile FileName="{x:Null}" Content="[strDocumentsText]" DisplayName="Read Documents Text" File="[LocalResource.FromPath(&quot;inputs\\cv.txt&quot;)]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ReadTextFile>
+                      <Assign DisplayName="Adding Document Text in Reqaust Body" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_24">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strDocumentsText]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strDocumentsText.Replace("""","~")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <Assign DisplayName="Adding Document Text in Reqaust Body" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_25">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strBodyReuqast]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strBodyReuqast.Replace("(DocumentsTextPlaceHolder)",strDocumentsText)]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize Reqaust Body as  JSON" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_5" JsonObject="[JsonSerializer]" JsonString="[strBodyReuqast]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:DeserializeJson>
+                      <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileTargetFolder="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="Send Http Post Reqaust To Gemini" EnableCookies="True" FileOverwrite="Replace" FollowRedirects="True" FormData="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From {  }]" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { &quot;Content-Type&quot;, &quot;application/json&quot; },{ &quot;X-goog-api-key&quot;, in_strPiKey } }]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="NetHttpRequest_5" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" OutputFileName="Response.json" Parameters="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From {  }]" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" Result="[HttpResponse]" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[JsonSerializer.ToString()]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                        <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                          </InArgument>
+                        </uwah:NetHttpRequest.TimeoutInMiliseconds>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uwah:NetHttpRequest>
+                      <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_6" JsonObject="[JsonSerializer]" JsonString="[HttpResponse.TextContent]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:DeserializeJson>
+                    </Sequence>
+                    <Sequence DisplayName="Extract Response and Clean it" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Save Json Extradet Response Text To string" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_18">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strAiResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[JsonSerializer("candidates").First("content")("parts").First("text").ToString()]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <Assign DisplayName="Remove Word json" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_19">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strAiResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strAiResponse.Replace("json","")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <Assign DisplayName="Remove chartar [ json" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_20">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strAiResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strAiResponse.Replace("[","")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <Assign DisplayName="Remove chartar ] json" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_21">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strAiResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strAiResponse.Replace("]","")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <Assign DisplayName="Remove chartar ``` json" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="Assign_22">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strAiResponse]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strAiResponse.Replace("```","")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <ui:LogMessage DisplayName="Log Api Response After Cleaning" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;Response After cleaning : &quot;+Environment.NewLine+strAiResponse]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
+                      <Assign sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Assign_23">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">[out_liststrDocuments]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">[strAiResponse.Split(";;;;")]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                    </Sequence>
+                  </Sequence>
+                  <Sequence DisplayName="Post Condations" sap:VirtualizedContainerService.HintSize="449.6,131.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[out_liststrDocuments.Length=in_intNumberFiles]" DisplayName="Check if list of Documents eqaul To cvs files" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;list size   same  files  count&quot;]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log BE02" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Error" Message="[&quot;BE02 list size isnt  same  files  count&quot;]" />
+                          <Throw DisplayName="Throw BE02" Exception="[new BusinessRuleException( &quot;BE02 list size isnt  same  files  count&quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,24.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Error" Message="[&quot;Exception message &quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="518.4,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,24.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Error" Message="[&quot;Exception message &quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="518.4,48" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="518.4,89.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Entry Piont" sap:VirtualizedContainerService.HintSize="449.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;Exit ExtractDataUsingApi&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

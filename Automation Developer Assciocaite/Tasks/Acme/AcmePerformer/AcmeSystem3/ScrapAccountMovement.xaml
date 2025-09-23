@@ -1,0 +1,341 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ScrapAccountMovement" this:ScrapAccountMovement.in_strAccountNumber="741014" this:ScrapAccountMovement.in_intRetries="3" this:ScrapAccountMovement.in_tsRetryTimeDelay="00:00:05" this:ScrapAccountMovement.in_intTimeWait="10000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strAccountNumber" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_intRetries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_tsRetryTimeDelay" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="in_intTimeWait" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_intAmount" Type="OutArgument(x:Int32)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ScrapAccountMovement_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ScrapAccountMovement" sap:VirtualizedContainerService.HintSize="604.8,2718.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dtAccountMovements" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Entry Piont" sap:VirtualizedContainerService.HintSize="604.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Enter ScrapAccountMovement&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="604.8,2355.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="603.2,1809.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="569.6,1749.6" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intRetries]" RetryInterval="[in_tsRetryTimeDelay]">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="568,1552" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="boolAccountMovementWindowOpened" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Pre Condations" sap:VirtualizedContainerService.HintSize="534.4,196.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Check if Account Movement  window is opened " Exists="[boolAccountMovementWindowOpened]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bb6bb9f3-b36d-4e4b-af3d-aae21e1c0b3a" InformativeScreenshot="a18937130d2df43d010f4437fb1bf30e" Selector="[string.Format(&quot;&lt;wnd app='acme-system3.exe' ctrlname='ClientAccountMovemnets' /&gt;&lt;wnd ctrlname='groupBox2' /&gt;&lt;wnd ctrlname='label5' aaname='{0}' /&gt;&quot;, in_strAccountNumber)]" TimeoutMS="[in_intTimeWait]" WaitForReady="COMPLETE" />
+                      </ui:UiElementExists.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:UiElementExists>
+                    <If Condition="[boolAccountMovementWindowOpened]" DisplayName="if " sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Window already  opened " sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot; Account Movemnt Window is  opened going to scrap data&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log AE06" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;AE06 Account Movemnt Window isnt open&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <Throw DisplayName="Throw AE06" Exception="[new SystemException(&quot;AE06 Account Movemnt Window isnt open&quot;)]" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Throw_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Throw>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                  <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="534.4,1182.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Attact to Account Transcation Window" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="500.8,1090.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="6af83172-fea4-45a9-8eaf-e4ca6cbc577e" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="467.2,760" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click on Show All Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6af83172-fea4-45a9-8eaf-e4ca6cbc577e" Version="V5">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CVScreenId="012b67fd-d22d-46a1-84e2-6b12ecd349eb" ContentHash="2DaJMakqLk6H8kdjpRtbZA" DesignTimeRectangle="335, 262, 139, 36" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='button2' /&gt;" Guid="1f88305c-70fe-485f-9037-b251dd4ce99d" InformativeScreenshot="cfb5c832a883544dff92990b5f2f458d.png" Reference="kI_0EuLstky830xRzx00dg/PQnF5aT5IUuAVCeBVSdDKQ" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='ClientAccountMovemnets' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                            </uix:NClick>
+                            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtAccountMovements]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='transactionID' ReferenceIdx='0' Name='transactionID' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='transaction Date' ReferenceIdx='1' Name='transaction Date' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Amount' ReferenceIdx='2' Name='Amount'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Type' ReferenceIdx='3' Name='Type' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="6af83172-fea4-45a9-8eaf-e4ca6cbc577e" Version="V5">
+                              <uix:NExtractData.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="25, 326, 885, 236" DesignTimeScaleFactor="1.25" ElementType="List" FullSelectorArgument="&lt;uia automationid='listView1' /&gt;" Guid="b21cdf36-4ff0-4a01-9443-1e16b9b2310a" InformativeScreenshot="06889bc67a74f6df0b81c8ff85b99765.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='ClientAccountMovemnets' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
+                              </uix:NExtractData.Target>
+                            </uix:NExtractData>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[out_intAmount]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">[dtAccountMovements.AsEnumerable().Select(Function(row) CInt( row.Field(of String)("Amount")) ).Aggregate(Function(num1,num2)num1+num2)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[out_intAmount]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="96, 34, 935, 588" ContentHash="5W8AiWlfKEyB7iLkk7WUzg" IconBase64="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" InformativeScreenshot="d2d430013c53684e4558aad66a8293c3.png" Reference="kI_0EuLstky830xRzx00dg/N5BsJh_XMk6p3xT8SHVMVA" Selector="&lt;wnd app='acme-system3.exe' ctrlname='ClientAccountMovemnets' /&gt;" Version="V2" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
+                  </Sequence>
+                  <Sequence DisplayName="Post Condations" sap:VirtualizedContainerService.HintSize="534.4,112.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="603.2,282.4" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Exception" sap:VirtualizedContainerService.HintSize="569.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="569.6,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="603.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Exit Piont" sap:VirtualizedContainerService.HintSize="604.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Exit ScrapAccountMovement&quot;]" />
+  </Sequence>
+</Activity>

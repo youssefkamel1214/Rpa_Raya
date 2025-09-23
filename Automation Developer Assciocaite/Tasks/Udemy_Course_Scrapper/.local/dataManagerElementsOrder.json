@@ -1,0 +1,111 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Input/Taking_Input.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "intPervoisNumber&Sequence_2",
+        "intCounter&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/Scrap_Course_Data.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/SearchCourseOnBrowser.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Input/YesNO_Question.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/OpenBrowserOnUdemy.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/CloseBrowser.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/VerfifyThatIsLoggedIn.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/LogInToUdemy.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Browser/LogOutUdemy.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Txt/SaveToTxt.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main_Flow.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}

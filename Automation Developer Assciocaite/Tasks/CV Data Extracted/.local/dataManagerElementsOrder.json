@@ -1,0 +1,60 @@
+{
+  "Workflows": [
+    {
+      "Path": "PDf/SavePdfFilesToTxt.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PDf/ExtractDataUsingApi.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "DocumentUnderstanding/ExtractDataUsingUIPathDocumentUnderstanding.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PDf/DesiarizerOfStringDocuments.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Drive/SendEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}

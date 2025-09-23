@@ -1,0 +1,238 @@
+{
+  "exportedBy": null,
+  "bundleHash": null,
+  "version": "1.0.0.0",
+  "jitAssemblyCompilerCommands": [
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "367012054",
+        "bundleName": "CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015",
+        "entitiesBundle": {
+          "Types": {
+            "CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015": {
+              "name": "CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015",
+              "properties": [],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015",
+        "hash": "MzY3MDEyMDU0",
+        "assemblyName": "CustomGptDocumentTyp.LbkzRb27sJ1ZbfUI2xXhur"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "-2003519531",
+        "bundleName": "CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F",
+        "entitiesBundle": {
+          "Types": {
+            "CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F": {
+              "name": "CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F",
+              "properties": [
+                {
+                  "name": "Name",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Phone",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                }
+              ],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F",
+        "hash": "LTIwMDM1MTk1MzE",
+        "assemblyName": "CustomGptDocumentTyp.WPh8Y3fxRGG12TGeE2Bf8MG1"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "146757696",
+        "bundleName": "CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2",
+        "entitiesBundle": {
+          "Types": {
+            "CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2": {
+              "name": "CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2",
+              "properties": [
+                {
+                  "name": "Name",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Phone",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Email",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Adress",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "JobTitle",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                }
+              ],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2",
+        "hash": "MTQ2NzU3Njk2",
+        "assemblyName": "CustomGptDocumentTyp.lnLup1ahrXH1UGcLJ3GJCYu3"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "146757696",
+        "bundleName": "CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4",
+        "entitiesBundle": {
+          "Types": {
+            "CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4": {
+              "name": "CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4",
+              "properties": [
+                {
+                  "name": "Name",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Phone",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Email",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Adress",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "JobTitle",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                }
+              ],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4",
+        "hash": "MTQ2NzU3Njk2",
+        "assemblyName": "CustomGptDocumentTyp.SklmK2yGDLE1h15CuRQDMA"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "146757696",
+        "bundleName": "CustomGptDocumentType478785FaD083428CB157B6D520446738",
+        "entitiesBundle": {
+          "Types": {
+            "CustomGptDocumentType478785FaD083428CB157B6D520446738": {
+              "name": "CustomGptDocumentType478785FaD083428CB157B6D520446738",
+              "properties": [
+                {
+                  "name": "Name",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Phone",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Email",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Adress",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "JobTitle",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedField`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                }
+              ],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType478785FaD083428CB157B6D520446738",
+        "hash": "MTQ2NzU3Njk2",
+        "assemblyName": "CustomGptDocumentTyp.Gvu9Z2K1KEJ1TY28H47Ohok3"
+      }
+    }
+  ]
+}

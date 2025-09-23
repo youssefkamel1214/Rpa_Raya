@@ -1,0 +1,60 @@
+{
+  "Workflows": [
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Orechstor/Delete All Items.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "MainFlow.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/NavigateToWorkItemsPage.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/LogInAcmeSystem1.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Orechstor/AddDataToQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "AcmeSystem1/ExtractWorkItemsData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": null,
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": null,
+      "AddedNamespaces": null
+    }
+  ]
+}

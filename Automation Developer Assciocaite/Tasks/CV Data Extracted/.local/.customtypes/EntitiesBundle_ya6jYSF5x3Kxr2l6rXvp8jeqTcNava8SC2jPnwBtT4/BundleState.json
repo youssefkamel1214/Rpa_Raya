@@ -1,0 +1,49 @@
+{
+  "assemblyStates": {
+    "CustomGptDocumentTyp.WPh8Y3fxRGG12TGeE2Bf8MG1": {
+      "namespace": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F",
+        "hash": "LTIwMDM1MTk1MzE",
+        "assemblyName": "CustomGptDocumentTyp.WPh8Y3fxRGG12TGeE2Bf8MG1"
+      }
+    },
+    "CustomGptDocumentTyp.lnLup1ahrXH1UGcLJ3GJCYu3": {
+      "namespace": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2",
+        "hash": "MTQ2NzU3Njk2",
+        "assemblyName": "CustomGptDocumentTyp.lnLup1ahrXH1UGcLJ3GJCYu3"
+      }
+    },
+    "CustomGptDocumentTyp.SklmK2yGDLE1h15CuRQDMA": {
+      "namespace": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4",
+        "hash": "MTQ2NzU3Njk2",
+        "assemblyName": "CustomGptDocumentTyp.SklmK2yGDLE1h15CuRQDMA"
+      }
+    },
+    "CustomGptDocumentTyp.LbkzRb27sJ1ZbfUI2xXhur": {
+      "namespace": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015",
+        "hash": "MzY3MDEyMDU0",
+        "assemblyName": "CustomGptDocumentTyp.LbkzRb27sJ1ZbfUI2xXhur"
+      }
+    },
+    "CustomGptDocumentTyp.Gvu9Z2K1KEJ1TY28H47Ohok3": {
+      "namespace": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType478785FaD083428CB157B6D520446738.Bundle",
+      "providerName": "CustomEntities",
+      "key": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType478785FaD083428CB157B6D520446738",
+        "hash": "MTQ2NzU3Njk2",
+        "assemblyName": "CustomGptDocumentTyp.Gvu9Z2K1KEJ1TY28H47Ohok3"
+      }
+    }
+  }
+}

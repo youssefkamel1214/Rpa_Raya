@@ -1,0 +1,426 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UplaodResult" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugam="clr-namespace:UiPath.GSuite.Activities.Models;assembly=UiPath.GSuite.Activities" xmlns:ugdm="clr-namespace:UiPath.GSuite.Drive.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_strFileUrl" Type="OutArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_strFilePath" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_intRetries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_DelayTime" Type="InArgument(x:TimeSpan)" />
+  </x:Members>
+  <this:UplaodResult.in_strFilePath>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:UplaodResult.in_strFilePath>
+  <this:UplaodResult.in_intRetries>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:UplaodResult.in_intRetries>
+  <this:UplaodResult.in_DelayTime>
+    <InArgument x:TypeArguments="x:TimeSpan" />
+  </this:UplaodResult.in_DelayTime>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>UplaodResult_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.GSuite.Activities.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>UiPath.GSuite</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Actions: uplaod image Result To Google Drive&#xD;&#xA;Pre Condations: File Exists&#xD;&#xA;Post Condations: None&#xD;&#xA;" DisplayName="UplaodResult" sap:VirtualizedContainerService.HintSize="667.6,1730.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(upr:IResource)" Default="[new List(of IResource)]" Name="listFiles" />
+      <Variable x:TypeArguments="si:FileInfo" Name="aa" />
+      <Variable x:TypeArguments="x:Boolean" Name="ww" />
+      <Variable x:TypeArguments="x:Boolean" Name="ee" />
+      <Variable x:TypeArguments="ugdm:GDriveRemoteItem" Name="GDriveFile" />
+      <Variable x:TypeArguments="ugdm:GDriveRemoteItem[]" Name="listFilesa" />
+      <Variable x:TypeArguments="x:String" Name="strFileUrl" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Entry Piont" sap:VirtualizedContainerService.HintSize="520,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Enter UplaodResult&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="520,1289.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="518.4,422.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="484.8,362.4" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intRetries]" RetryInterval="[in_DelayTime]">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="483.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="boolButtonChanged" />
+                    <Variable x:TypeArguments="x:String" Name="strFileName" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Pre Condations" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="boolFileExists" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:FileExistsX DisplayName="File Exists" Exists="[boolFileExists]" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[in_strFilePath]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FileExistsX>
+                    <If Condition="[boolFileExists]" DisplayName="if File Exists in Directory of Inputs" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,108" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log File Exists" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Screen Exists Begin Upload it  &quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log File Doesnt Exists" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;AE02 Screen Shot Doesnt Exists in outpus Directory&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                          <Throw DisplayName="Throw AE02" Exception="[new SystemException(&quot;AE02 Screen Shot Doesnt Exists in outpus Directory&quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Throw>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                  <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uasa:AppendItemToList x:TypeArguments="upr:IResource" ItemIndex="{x:Null}" DisplayName="Append File to List IResourse File To upload it" sap:VirtualizedContainerService.HintSize="432,56.8" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5" ItemToAppend="[LocalResource.FromPath(in_strFilePath)]" List="[listFiles]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uasa:AppendItemToList>
+                    <uga:UploadFilesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DestinationFolder="{x:Null}" FilesList="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" ManualFolderId="{x:Null}" OverwriteExistingFile="{x:Null}" SingleFileToUpload="{x:Null}" AllResults="[listFilesa]" AuthScopesInvalid="False" BrowseFolderId="https://drive.google.com/drive/folders/1oWsJkpkHf0FHyi9VWynA_OdpIsI5TdTo" ConflictResolution="AddSeparate" ConnectionId="80a9556c-122e-4a7d-a970-cf9cabeedf6b" Convert="False" DisplayName="Upload File To Drive" FilesInputMode="MultipleByVariable" FirstResult="[GDriveFile]" FolderInputMode="Browse" sap:VirtualizedContainerService.HintSize="432,56.8" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_4" MultipleFilesToUpload="[listFiles]" SaveToFolderName="Rpa Bot" UseConnectionService="True">
+                      <uga:UploadFilesConnections.FilesBackup>
+                        <usau:BackupSlot x:TypeArguments="ugade:FilesInputMode" StoredValue="MultipleByVariable">
+                          <usau:BackupSlot.BackupValues>
+                            <scg:Dictionary x:TypeArguments="ugade:FilesInputMode, scg:List(x:Object)" />
+                          </usau:BackupSlot.BackupValues>
+                        </usau:BackupSlot>
+                      </uga:UploadFilesConnections.FilesBackup>
+                      <uga:UploadFilesConnections.Folder>
+                        <ugam:DriveItemArgument ConnectionDescriptor="{x:Null}" Existing="{x:Null}" FullPath="{x:Null}" IdOrUrl="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" BrowserId="https://drive.google.com/drive/folders/1oWsJkpkHf0FHyi9VWynA_OdpIsI5TdTo" ConnectionKey="80a9556c-122e-4a7d-a970-cf9cabeedf6b" FriendlyName="Rpa Bot" FullPathHint="My Drive/Rpa Bot" InputMode="Browse">
+                          <ugam:DriveItemArgument.Backup>
+                            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </ugam:DriveItemArgument.Backup>
+                          <ugam:DriveItemArgument.ParentIdFullPathHint>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ugam:DriveItemArgument.ParentIdFullPathHint>
+                        </ugam:DriveItemArgument>
+                      </uga:UploadFilesConnections.Folder>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uga:UploadFilesConnections>
+                    <uga:ShareFileFolderConnections BrowserFileFolderFriendlyName="{x:Null}" BrowserFileFolderId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Domain="{x:Null}" FileFolderExisting="{x:Null}" FileFolderIdBackup="{x:Reference __ReferenceID1}" UserEmail="{x:Null}" AccessUrl="[strFileUrl]" AuthScopesInvalid="False" ConnectionId="80a9556c-122e-4a7d-a970-cf9cabeedf6b" DisplayName="Get Share Link " FileFolderInputMode="UrlOrId" sap:VirtualizedContainerService.HintSize="432,56.8" sap2010:WorkflowViewState.IdRef="ShareFileFolderConnections_4" ManualEntryFileFolderId="[GDriveFile.ID]" Role="READER" SendNotificationEmail="True" ShareWith="ANYONE" UseConnectionService="True" UseDomainAdminAccess="False">
+                      <uga:ShareFileFolderConnections.Item>
+                        <ugam:DriveItemArgument BrowserId="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Existing="{x:Null}" FriendlyName="{x:Null}" FullPath="{x:Null}" ParentId="{x:Null}" ParentIdFriendlyName="{x:Null}" RelativePath="{x:Null}" IdOrUrl="[GDriveFile.ID]" InputMode="UrlOrId">
+                          <ugam:DriveItemArgument.Backup>
+                            <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" x:Name="__ReferenceID1" StoredValue="UrlOrId">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                                  <x:Null />
+                                  <x:Null />
+                                </scg:List>
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </ugam:DriveItemArgument.Backup>
+                          <ugam:DriveItemArgument.FullPathHint>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ugam:DriveItemArgument.FullPathHint>
+                          <ugam:DriveItemArgument.ParentIdFullPathHint>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </ugam:DriveItemArgument.ParentIdFullPathHint>
+                        </ugam:DriveItemArgument>
+                      </uga:ShareFileFolderConnections.Item>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uga:ShareFileFolderConnections>
+                    <Assign DisplayName="Delete Download part to make it accessble through interntet" sap:VirtualizedContainerService.HintSize="432,56.8" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strFileUrl]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[strFileUrl.Replace("&amp;export=download","")]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Final Url Path" sap:VirtualizedContainerService.HintSize="432,48" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[strFileUrl]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,282.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484.8,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Exception Message : &quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="484.8,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,282.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Exception Message : &quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Exit Piont" sap:VirtualizedContainerService.HintSize="520,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Exit UplaodResult&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

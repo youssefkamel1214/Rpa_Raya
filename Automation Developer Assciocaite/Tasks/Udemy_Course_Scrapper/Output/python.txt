@@ -1,0 +1,2 @@
+Index,Url,Name,Descirption,Duration,Price,Ratings,NumberRatings,Author
+1,/course/100-days-of-code/,100 Days of Code: The Complete Python Pro Bootcamp,"Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!",56h 28m,529.99,4.7,"391,943","Dr. Angela Yu, Developer and Lead Instructor"

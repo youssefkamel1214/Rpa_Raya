@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Attact to Account Transcation Window",
+  "Type": "Screen",
+  "Id": "N5BsJh_XMk6p3xT8SHVMVA",
+  "Reference": "kI_0EuLstky830xRzx00dg/N5BsJh_XMk6p3xT8SHVMVA",
+  "ParentRef": "kI_0EuLstky830xRzx00dg/1PjxQ0JcmUysKIx-eDg4_A",
+  "Created": "2025-09-23T00:45:47.1431965Z",
+  "Updated": "2025-09-23T00:45:47.1431965Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

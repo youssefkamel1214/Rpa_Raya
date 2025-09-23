@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Attact to Account Transcation Window",
+  "Type": "App",
+  "Id": "WoGUJ_4K1kOR5oPTETJKHQ",
+  "Reference": "kI_0EuLstky830xRzx00dg/WoGUJ_4K1kOR5oPTETJKHQ",
+  "Created": "2025-09-23T00:45:46.8053657Z",
+  "Updated": "2025-09-23T00:45:46.8053657Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

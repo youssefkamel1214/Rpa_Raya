@@ -1,0 +1,2 @@
+Index,Url,Name,Descirption,Duration,Price,Ratings,NumberRatings,Author
+2,/course/complete-web-designer-mobile-designer-zero-to-mastery/,"Complete Web & Mobile Designer: UI/UX, Figma, +more","Become a UX/UI Designer! Master Mobile and Web Design, User Interface + User Experience (UI/UX Design), HTML, and CSS",25h 40m,479.99,4.4,"36,925","Andrei Neagoie, Daniel Schifano"

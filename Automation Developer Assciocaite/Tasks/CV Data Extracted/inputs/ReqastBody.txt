@@ -1,0 +1,25 @@
+{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "taking this docements reply with me only with data: {feild:Extract data},Extract Name, Phone,Email,Adress (if not found search print  only  country Name , should be in format street, district, governce ,city,country), jobtitle(search if not found in experince,include Department like Manger (IT Department))in Department if not found estimate it from experience job Title cant be N/A  (if any field not found return N/A)
+Reply only with response
+  make Response list of json object spereting each one with ;;;;
+Example of Response:
+{
+[{
+Name:aa,
+....
+};;;;
+{name:xc
+,...
+}]
+}
+-------
+(DocumentsTextPlaceHolder)
+ "         }
+        ]
+      }
+    ]
+  }

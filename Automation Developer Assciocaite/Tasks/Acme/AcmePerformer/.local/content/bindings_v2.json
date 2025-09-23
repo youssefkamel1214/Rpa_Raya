@@ -1,0 +1,89 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "activityDisplayName": "Get Credential",
+      "activityId": "GetRobotCredential_1",
+      "resource": "asset",
+      "key": "Acme_system.AcmeCredatinatils",
+      "id": "assetAcme_system.AcmeCredatinatilsAcme_systemFalseAcmeCredatinatilsFalse",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Acme_system",
+          "isExpression": false
+        },
+        "name": {
+          "defaultValue": "AcmeCredatinatils",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2"
+      }
+    },
+    {
+      "activityDisplayName": "Get Asset",
+      "activityId": "GetRobotAsset_1",
+      "resource": "asset",
+      "key": "Acme_system/Performer.AcmePath",
+      "id": "assetAcme_system/Performer.AcmePathAcme_system/PerformerFalseAcmePathFalse",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Acme_system/Performer",
+          "isExpression": false
+        },
+        "name": {
+          "defaultValue": "AcmePath",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2"
+      }
+    },
+    {
+      "activityDisplayName": "Get Transaction Item",
+      "activityId": "GetQueueItem_1",
+      "resource": "queue",
+      "key": "Acme_system.Work_ITems_Test_Queue",
+      "id": "queueAcme_system.Work_ITems_Test_QueueAcme_systemFalseWork_ITems_Test_QueueFalse",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Acme_system",
+          "isExpression": false,
+          "displayName": "Folder Path"
+        },
+        "name": {
+          "defaultValue": "Work_ITems_Test_Queue",
+          "isExpression": false,
+          "displayName": "Queue name"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2"
+      }
+    },
+    {
+      "activityDisplayName": "Add Queue Item Hight Preiorty",
+      "activityId": "AddQueueItem_2",
+      "resource": "queue",
+      "key": "Acme_System.Work_ITems_Test_Queue",
+      "id": "queueAcme_System.Work_ITems_Test_QueueAcme_SystemFalseWork_ITems_Test_QueueFalse",
+      "value": {
+        "folderPath": {
+          "defaultValue": "Acme_System",
+          "isExpression": false,
+          "displayName": "Folder Path"
+        },
+        "name": {
+          "defaultValue": "Work_ITems_Test_Queue",
+          "isExpression": false,
+          "displayName": "Queue name"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2"
+      }
+    }
+  ]
+}

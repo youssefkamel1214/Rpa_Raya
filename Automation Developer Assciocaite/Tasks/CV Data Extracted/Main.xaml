@@ -1,0 +1,169 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeD4A31De4115649D6B9B4A18Aa5100015.Bundle</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentTypeB177875367624B389Ca5364B56D30C2F.Bundle</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType3Eaa6E03Dba64640Bcf7Da16953D6Ac2.Bundle</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType7C71206D93784E4C81Cd61C0Ee86Cac4.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.CustomGptDocumentType478785FaD083428CB157B6D520446738.Bundle</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.LbkzRb27sJ1ZbfUI2xXhur</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.WPh8Y3fxRGG12TGeE2Bf8MG1</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.lnLup1ahrXH1UGcLJ3GJCYu3</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.SklmK2yGDLE1h15CuRQDMA</AssemblyReference>
+      <AssemblyReference>CustomGptDocumentTyp.Gvu9Z2K1KEJ1TY28H47Ohok3</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="866,894.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strTableData" />
+      <Variable x:TypeArguments="s:String[]" Name="liststrDocuments" />
+      <Variable x:TypeArguments="sd:DataTable" Name="tablecvs" />
+      <Variable x:TypeArguments="x:Int32" Name="intNumberofFiles" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SavePdfFilesToTxt - Invoke Workflow File (PDf\SavePdfFilesToTxt.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="PDf\SavePdfFilesToTxt.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_intNumberFiles">[intNumberofFiles]</OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">3</InArgument>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_DelayTime">00:00:05</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExtractDataUsingApi - Invoke Workflow File (PDf\ExtractDataUsingApi.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="PDf\ExtractDataUsingApi.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strPiKey">AIzaSyAwkFCb0DQv60kitGPu6WRJ4IgwjK__b_I</InArgument>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_liststrDocuments">[liststrDocuments]</OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumberFiles">[intNumberofFiles]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">3</InArgument>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_DelayTime">00:00:05</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DesiarizerOfStringDocuments - Invoke Workflow File (PDf\DesiarizerOfStringDocuments.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="PDf\DesiarizerOfStringDocuments.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_liststrDocuments">[liststrDocuments]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">3</InArgument>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_DelayTime">00:00:05</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumberFiles">[intNumberofFiles]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExtractDataUsingUIPathDocumentUnderstanding - Invoke Workflow File (DocumentUnderstanding\ExtractDataUsingUIPathDocumentUnderstanding.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DocumentUnderstanding\ExtractDataUsingUIPathDocumentUnderstanding.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">3</InArgument>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_DelayTime">00:00:05</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Drive\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="449.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Drive\SendEmail.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRetries">3</InArgument>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_DelayTime">00:00:05</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumberFiles">[intNumberofFiles]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

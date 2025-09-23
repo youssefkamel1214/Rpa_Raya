@@ -1,0 +1,489 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchCourseOnBrowser" this:SearchCourseOnBrowser.in_intCoursesNumbers="4" this:SearchCourseOnBrowser.in_strCourseName="python" this:SearchCourseOnBrowser.in_DelayTime="00:00:05" this:SearchCourseOnBrowser.in_intRetries="3" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_tableCourses" Type="OutArgument(sd:DataTable)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_intCoursesNumbers" Type="InArgument(x:Int32)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_strCourseName" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_DelayTime" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="in_intRetries" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>SearchCourseOnBrowser_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Actions: Search on Udemy on Course and open Desired numbers of Courses in New Page&#xA;Pre Condation : Udemy Website Is Logged in&#xA;Post Condations : TableCourses Contain Number Of Rows of  Extracted Courses,and desired Coureses Opened in new tap" DisplayName="SearchCourseOnBrowser" sap:VirtualizedContainerService.HintSize="961.2,3874.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strstr" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="689.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Enter Search Course on Browser&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="689.6,3450.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="688,2904.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="654.4,2844.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intRetries]" RetryInterval="[in_DelayTime]">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="652.8,2647.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Pre Condation" sap:VirtualizedContainerService.HintSize="484.79999999999995,902.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="boolNotLoggedIN" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Verify That Log in Button Exits" Exists="[boolNotLoggedIN]" sap:VirtualizedContainerService.HintSize="451.2,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b9e1e845-4e39-4c1e-b00f-72eb18225f4c" InformativeScreenshot="1ce1a91fd98152d6d68a94b862eed638" Selector="&lt;html app='msedge.exe' url='https://www.udemy.com/*' /&gt;&lt;webctrl aaname='Log in' tag='A' data-purpose='header-login' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                      </ui:UiElementExists.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:UiElementExists>
+                    <If Condition="[boolNotLoggedIN]" DisplayName="if Website didnt open" sap:VirtualizedContainerService.HintSize="451.2,703.2" sap2010:WorkflowViewState.IdRef="If_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,348" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;BE 01 User Not Logged In&quot;]" />
+                          <Throw Exception="[new SystemException(&quot;BE01 Udemy Website Is Logged In&quot;)]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Udemy Website is Logged In  &quot;]" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                  <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="619.2,1913.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:BuildDataTable DataTable="[out_tableCourses]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="585.6,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Index&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Url&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Descirption&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Duration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ratings&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NumberRatings&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Author&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Online'" sap:VirtualizedContainerService.HintSize="585.6,1729.6" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="0582e4e58de403e9efda4f963bc0272d" Selector="&lt;html app='msedge.exe' url='https://www.udemy.com/*' /&gt;">
+                      <ui:BrowserScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="552,1559.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518.4,1499.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Take Controll of Screen" sap:VirtualizedContainerService.HintSize="484.8,118.4" sap2010:WorkflowViewState.IdRef="Activate_6">
+                                <ui:Activate.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="69e51a11-5269-4112-aa11-c1ef8109589f">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Activate.Target>
+                              </ui:Activate>
+                              <Sequence DisplayName="Making First Search" sap:VirtualizedContainerService.HintSize="484.8,1297.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into Search Bar Course Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="451.2,188" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_strCourseName]">
+                                  <ui:TypeInto.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b06d5b4-deff-4a83-b31d-ba295d341041" InformativeScreenshot="a0554a11ba402b71f82cecc61ed16b67" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
+                                  </ui:TypeInto.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:TypeInto>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Search Button" sap:VirtualizedContainerService.HintSize="451.2,139.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a1cdebf-e21c-4438-bf8a-51eed7a9891d" InformativeScreenshot="cb2aa2fea16a6e6ea2d723af870e3c0e" Selector="&lt;webctrl aria-label='Submit search' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:Click>
+                                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumber" sap:VirtualizedContainerService.HintSize="451.2,887.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(1,in_intCoursesNumbers)]">
+                                  <ui:ForEach.Body>
+                                    <ActivityAction x:TypeArguments="x:Int32">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,765.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="strUrl" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Take Controll of Screen" sap:VirtualizedContainerService.HintSize="416,118.4" sap2010:WorkflowViewState.IdRef="Activate_7">
+                                          <ui:Activate.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="69e51a11-5269-4112-aa11-c1ef8109589f">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:Activate.Target>
+                                        </ui:Activate>
+                                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute href &quot;course url&quot;" sap:VirtualizedContainerService.HintSize="416,236.8" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                                          <ui:GetAttribute.Result>
+                                            <OutArgument x:TypeArguments="x:String">[strUrl]</OutArgument>
+                                          </ui:GetAttribute.Result>
+                                          <ui:GetAttribute.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce5958a8-2416-4098-b553-322e276e8ef3" InformativeScreenshot="e1146d74ea3003c27a507c2688ad4b4e" Selector="[string.Format(&quot;&lt;webctrl tag='A' href='/course/*' idx='{0}' /&gt;&quot;, currentNumber)]" WaitForReady="COMPLETE">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                            </ui:Target>
+                                          </ui:GetAttribute.Target>
+                                        </ui:GetAttribute>
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Convert.ToString(currentNumber),strUrl,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;0.0&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;}]" DataTable="[out_tableCourses]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Course Url" sap:VirtualizedContainerService.HintSize="416,130.4" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="032daf82-0e42-4b78-a4d5-31e917cc0cea" InformativeScreenshot="fc649583fbde70c283d6ad3baa1d6f44" Selector="[string.Format(&quot;&lt;webctrl tag='A' href='/course/*' idx='{0}' /&gt;&quot;, currentNumber)]">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:Click.Target>
+                                        </ui:Click>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEach.Body>
+                                </ui:ForEach>
+                              </Sequence>
+                            </Sequence>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:BrowserScope.Body>
+                    </ui:BrowserScope>
+                  </Sequence>
+                  <Sequence DisplayName="Post Condation" sap:VirtualizedContainerService.HintSize="619.2,616.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_tableCourses]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="468.8,533.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,360.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Default="https://www.udemy.com/course/complete-ai-guide/" Name="strCourseUrl" />
+                              <Variable x:TypeArguments="x:Boolean" Name="boolCoursePagePageOpened" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strCourseUrl]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["https://www.udemy.com"+CurrentRow("Url").ToString()]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:UiElementExists DisplayName="Check if Course Page Link is opened" Exists="[boolCoursePagePageOpened]" sap:VirtualizedContainerService.HintSize="433.6,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                              <ui:UiElementExists.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="347476a1-4b11-4231-9b1d-487ea407ad8d" InformativeScreenshot="82ab48952a155512a12d93576c531a19" Selector="[string.Format(&quot;&lt;html app='msedge.exe' url='{0}*' /&gt;&quot;, strCourseUrl)]">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:UiElementExists.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:UiElementExists>
+                            <If Condition="[boolCoursePagePageOpened]" sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="If_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Following Url Opened Succesfully&quot;+strCourseUrl]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,348" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;AE05 Following Url didnt Open&quot;+strCourseUrl+Environment.NewLine+&quot;at Index&quot;+CurrentRow(&quot;Index&quot;).ToString()]" />
+                                  <Throw Exception="[new SystemException(&quot;AE05 Following Url didnt Open&quot;+strCourseUrl+Environment.NewLine+&quot;at Index&quot;+CurrentRow(&quot;Index&quot;).ToString())]" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,282.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="654.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Exception Message :&quot;+exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="654.4,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="688,89.6" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="689.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Exit Search Course on Browser&quot;]" />
+  </Sequence>
+</Activity>

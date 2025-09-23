@@ -1,0 +1,53 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "activityDisplayName": "Upload File To Drive",
+      "activityId": "UploadFilesConnections_4",
+      "resource": "Connection",
+      "key": "80a9556c-122e-4a7d-a970-cf9cabeedf6b",
+      "id": "Connection80a9556c-122e-4a7d-a970-cf9cabeedf6b80a9556c-122e-4a7d-a970-cf9cabeedf6bFalse",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "80a9556c-122e-4a7d-a970-cf9cabeedf6b",
+          "isExpression": false,
+          "displayName": "Connection",
+          "description": "The connection to be used"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.2",
+        "Connector": "uipath-google-drive",
+        "UseConnectionService": "True"
+      }
+    },
+    {
+      "activityDisplayName": "Upload File To Drive",
+      "activityId": "UploadFilesConnections_4",
+      "resource": "Property",
+      "key": "80a9556c-122e-4a7d-a970-cf9cabeedf6b.Upload File To Drive",
+      "id": "Property80a9556c-122e-4a7d-a970-cf9cabeedf6b.Upload File To DriveRpa BotFalsehttps://drive.google.com/drive/folders/1oWsJkpkHf0FHyi9VWynA_OdpIsI5TdToFalse",
+      "value": {
+        "FullName": {
+          "defaultValue": "Rpa Bot",
+          "isExpression": false,
+          "displayName": "Destination folder",
+          "description": "The destination folder where to upload the files. If not specified, it defaults to Google Drive root folder"
+        },
+        "ID": {
+          "defaultValue": "https://drive.google.com/drive/folders/1oWsJkpkHf0FHyi9VWynA_OdpIsI5TdTo",
+          "isExpression": false,
+          "displayName": "Destination folder URL",
+          "description": "The destination folder where to upload the files. If not specified, it defaults to Google Drive root folder"
+        }
+      },
+      "metadata": {
+        "BindingsVersion": "2.1",
+        "ActivityName": "Upload File To Drive",
+        "ObjectName": "CuratedFolder",
+        "DisplayLabel": "FullName",
+        "ParentResourceKey": "Connection.80a9556c-122e-4a7d-a970-cf9cabeedf6b"
+      }
+    }
+  ]
+}
