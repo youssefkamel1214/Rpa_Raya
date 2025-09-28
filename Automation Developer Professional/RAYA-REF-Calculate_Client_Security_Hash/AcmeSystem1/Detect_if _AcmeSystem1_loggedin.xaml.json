@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Detect_if _AcmeSystem1_loggedin",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_intTimeWait",
+      "DisplayName": "in_intTimeWait",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "500",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "out_boolLoggedIn",
+      "DisplayName": "out_boolLoggedIn",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
